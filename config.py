@@ -1,5 +1,5 @@
 """
-Configuration du bot Telegram Ultra
+Configuration du bot Telegram shadybot
 """
 import os
 from dotenv import load_dotenv
