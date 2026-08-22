@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ═══════════════════════════════════════════════════════════════
-  🤖 BOT TELEGRAM ULTRA - Version Complète
+  🤖 BOT TELEGRAM SHADYBOT - Version Complète
 
   Fonctionnalités:
   ✓ Recherche web intelligente
