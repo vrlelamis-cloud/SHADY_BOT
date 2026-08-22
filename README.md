@@ -1,4 +1,4 @@
-# 🤖 UltraBot - Bot Telegram Intelligent
+# 🤖 SHADYBOT - Bot Telegram Intelligent
 
 Un bot Telegram complet avec recherche web, modération de groupe, planification de tâches, administration et protection de la vie privée.
 
