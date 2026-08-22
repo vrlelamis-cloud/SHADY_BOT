@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ═══════════════════════════════════════════════════════════════
-  🤖 ULTRABOT TELEGRAM - Version Render Stable
+  ✳️ SHADYBOT TELEGRAM - Version Render Stable
 ═══════════════════════════════════════════════════════════════
 """
 
