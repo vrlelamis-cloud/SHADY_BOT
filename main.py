@@ -103,7 +103,7 @@ async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await db.add_user(user.id, user.username, user.first_name, user.last_name or "")
     text = (
         f"👋 *Bienvenue, {escape_md(user.first_name)}\!*\n\n"
-        f"Je suis 🤖 *UltraBot*, votre assistant intelligent\.\n\n"
+        f"Je suis 🤖 *ShadyBot*, votre assistant intelligent\.\n\n"
         f"📋 *Commandes disponibles\:*\n"
         f"🔍 `/search <requête>` \- Recherche web\n"
         f"📰 `/news <sujet>` \- Actualités\n"
@@ -122,7 +122,7 @@ async def cmd_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 async def cmd_help(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = (
-        "📖 *AIDE COMPLÈTE D\'ULTRABOT*\n\n"
+        "📖 *AIDE COMPLÈTE D\'SHADYBOT*\n\n"
         "*🔍 RECHERCHE WEB*\n"
         "`/search <requête>` \- Recherche sur le web\n"
         "`/news <sujet>` \- Rechercher des actualités\n"
@@ -188,7 +188,7 @@ async def cmd_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def cmd_about(update: Update, context: ContextTypes.DEFAULT_TYPE):
     stats = await db.get_stats()
     text = (
-        f"🤖 *UltraBot v2\.0*\n\n"
+        f"🤖 *ShadyBot v2\.0*\n\n"
         f"_Un bot Telegram intelligent et polyvalent_\n\n"
         f"📊 *Statistiques\:*\n"
         f"• 👥 Utilisateurs\: `{stats['total_users']}`\n"
@@ -935,7 +935,7 @@ async def main():
     logger.info("👂 Démarrage du polling...")
     await application.updater.start_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
 
-    logger.info("✅ UltraBot est en ligne et en écoute!")
+    logger.info("✅ ShadyBot est en ligne et en écoute!")
 
     # Garder le programme en vie indéfiniment
     try:
