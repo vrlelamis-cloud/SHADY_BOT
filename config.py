@@ -23,6 +23,10 @@ class Config:
     # Assistant IA
     OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
     AI_MODEL = os.getenv("AI_MODEL", "openrouter/free")
+    AI_TEMPERATURE = float(os.getenv("AI_TEMPERATURE", "0.7"))
+    AI_MAX_HISTORY_MESSAGES = int(os.getenv("AI_MAX_HISTORY_MESSAGES", "12"))
+    AI_GROUP_MENTION_ONLY = os.getenv("AI_GROUP_MENTION_ONLY", "true").lower() == "true"
+
 
     # Anti-flood
     FLOOD_MAX_MESSAGES = int(os.getenv("FLOOD_MAX_MESSAGES", "5"))
