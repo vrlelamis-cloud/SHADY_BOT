@@ -15,6 +15,28 @@ class Database:
     async def init(self):
         """Initialise la base de données avec toutes les tables"""
         async with aiosqlite.connect(self.db_path) as db:
+            async def add_ai_message(self, user_id, chat_id, role, content):
+    if role not in ("user", "assistant") or not content:
+        return
+    async with aiosqlite.connect(self.db_path) as db:
+        await db.execute("INSERT INTO ai_memory (user_id, chat_id, role, content) VALUES (?, ?, ?, ?)",
+                         (user_id, chat_id, role, content[:8000]))
+        await db.commit()
+
+async def get_ai_memory(self, user_id, chat_id, limit=12):
+    async with aiosqlite.connect(self.db_path) as db:
+        db.row_factory = aiosqlite.Row
+        async with db.execute("""SELECT role, content FROM ai_memory
+            WHERE user_id=? AND chat_id=? ORDER BY id DESC LIMIT ?""", (user_id, chat_id, limit)) as cursor:
+            rows = await cursor.fetchall()
+    rows.reverse()
+    return [{"role": r["role"], "content": r["content"]} for r in rows]
+
+async def clear_ai_memory(self, user_id, chat_id):
+    async with aiosqlite.connect(self.db_path) as db:
+        await db.execute("DELETE FROM ai_memory WHERE user_id=? AND chat_id=?", (user_id, chat_id))
+        await db.commit()
+
             # Table des utilisateurs
             await db.execute("""
                 CREATE TABLE IF NOT EXISTS users (
